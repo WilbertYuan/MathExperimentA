@@ -1,0 +1,845 @@
+May 1st homework_1   p20、p64页习题
+---------------------------------------------------------------------------------------------p20页习题 终端输出结果
+
+-----------------------注：本次作业采用终端输出的原因主要在于此种提交的方式更能体现本人的实际操作及学习过程
+
+------------------------------------------------------------------------------------------May 1st B23042424 袁浩宽
+
+
+%%1.
+ 
+>> [1 2;3 4]+10-2i
+
+ans =
+
+  11.0000 - 2.0000i  12.0000 - 2.0000i
+  13.0000 - 2.0000i  14.0000 - 2.0000i
+
+>> [1 2;3 4].*[0.1 0.2;0.3 0.4]
+
+ans =
+
+    0.1000    0.4000
+    0.9000    1.6000
+
+>> [1 2;3 4].\[20 10;9 2]
+
+ans =
+
+   20.0000    5.0000
+    3.0000    0.5000
+
+>> [1 2;3 4].^2
+
+ans =
+
+     1     4
+     9    16
+
+>> exp([1 2;3 4])
+
+ans =
+
+    2.7183    7.3891
+   20.0855   54.5982
+
+>> log([1 10 100])
+
+ans =
+
+         0    2.3026    4.6052
+
+>> prod([1 2;3 4])
+
+ans =
+
+     3     8
+
+>> help prod
+ prod Product of elements.
+    P = prod(X) is the product of the elements of the vector X. If X is a
+    matrix, P is a row vector with the product over each column. For 
+    N-D arrays, prod(X) operates on the first non-singleton dimension.
+ 
+    prod(X,"all") computes the product of all elements of X.
+ 
+    prod(X,DIM) operates along the dimension DIM.
+ 
+    prod(X,VECDIM) operates on the dimensions specified in the vector 
+    VECDIM. For example, prod(X,[1 2]) operates on the elements contained
+    in the first and second dimensions of X.
+ 
+    prod(...,OUTTYPE) specifies the type in which the product is 
+    performed, and the type of P. Available options are:
+ 
+    "double"    -  P has class double for any input X
+    "native"    -  P has the same class as X
+    "default"   -  If X is floating point, that is double or single,
+                   P has the same class as X. If X is not floating point, 
+                   P has class double.
+ 
+    prod(...,NANFLAG) specifies how NaN values are treated:
+ 
+    "includemissing" / "includenan" -
+                   (default) The product of a vector containing NaN values
+                   is also NaN.
+    "omitmissing" / "omitnan"       -
+                   The product of a vector containing NaN values
+                   is the product of all its non-NaN elements. If all 
+                   elements are NaN, the result is 1.
+ 
+    Examples:
+        X = [0 1 2; 3 4 5]
+        prod(X,1)
+        prod(X,2)
+ 
+        X = int8([5 5 5 5])
+        prod(X)              % returns double(625), accumulates in double
+        prod(X,"native")     % returns int8(127), because it accumulates in
+                             % int8, but overflows and saturates.
+ 
+    See also sum, cumprod, diff.
+
+    Documentation for prod
+    Other uses of prod
+
+>> [a,b] = min([10 20;30 40])
+
+a =
+
+    10    20
+
+
+b =
+
+     1     1
+
+>> abs([1 2;3 4] - pi)
+
+ans =
+
+    2.1416    1.1416
+    0.1416    0.8584
+
+>> [10 20;30 40] >= [40 30;20 10]
+
+ans =
+
+  2×2 logical array
+
+   0   0
+   1   1
+
+>> find([10 20;30 40] >= [40 30;20 10])
+
+ans =
+
+     2
+     4
+
+>> [a,b] = find([10 20;30 40] >= [40 30;20 10])
+
+a =
+
+     2
+     2
+
+
+b =
+
+     1
+     2
+
+>> all([1 2;3 4]>1)
+
+ans =
+
+  1×2 logical array
+
+   0   1
+
+>> help all
+ all    True if all elements of a vector are nonzero.
+    For vectors, all(V) returns logical 1 (TRUE) if none of the elements 
+    of the vector are zero.  Otherwise it returns logical 0 (FALSE).  For 
+    matrices, all(X) operates on the columns of X, returning a row vector
+    of logical 1's and 0's. For N-D arrays, all(X) operates on the first
+    non-singleton dimension.
+ 
+    all(X,'all') returns logical 1 (TRUE) if none of the elements of an 
+    array X are zero.  Otherwise, it returns logical 0 (FALSE).
+ 
+    all(X,DIM) operates down the dimension DIM of an array X.  For example, 
+    all(X,1) operates down the first dimension (the rows) of X.
+ 
+    all(X,VECDIM) operates on the dimensions specified in the vector 
+    VECDIM of an array X. For example, all(X,[1 2]) operates on the 
+    elements contained in the first and second dimensions of X.
+ 
+    See also any.
+
+    Documentation for all
+    Other uses of all
+
+>> [1 2;3 4]>1
+
+ans =
+
+  2×2 logical array
+
+   0   1
+   1   1
+
+>> any([1 2;3 4]>1)
+
+ans =
+
+  1×2 logical array
+
+   1   1
+
+>> help any
+ any    True if any element of a vector is a nonzero number or is
+    logical 1 (TRUE).  any ignores entries that are NaN (Not a Number).
+ 
+    For vectors, any(V) returns logical 1 (TRUE) if any of the 
+    elements of the vector is a nonzero number or is logical 1 (TRUE).
+    Otherwise it returns logical 0 (FALSE).  For matrices, any(X) 
+    operates on the columns of X, returning a row vector of logical 1's 
+    and 0's.  For multi-dimensional arrays, any(X) operates on the 
+    first non-singleton dimension.
+ 
+    any(X,'all') returns logical 1 (TRUE) if any of the elements of an 
+    array X are nonzero. Otherwise, it returns logical 0 (FALSE).  
+ 
+    any(X,DIM) operates down the dimension DIM of an array X.  For example, 
+    any(X,1) operates down the first dimension (the rows) of X.
+ 
+    any(X,VECDIM) operates on the dimensions specified in the vector 
+    VECDIM of an array X. For example, any(X,[1 2]) operates on the 
+    elements contained in the first and second dimensions of X.
+ 
+    See also all, nnz.
+
+    Documentation for any
+    Other uses of any
+
+>> any([1 1;3 4]>1)
+
+ans =
+
+  1×2 logical array
+
+   1   1
+
+>> [1 1;3 4]>1
+
+ans =
+
+  2×2 logical array
+
+   0   0
+   1   1
+
+>> any([1 1;1 4]>1)
+
+ans =
+
+  1×2 logical array
+
+   0   1
+
+>> linspace(3,4,5)
+
+ans =
+
+    3.0000    3.2500    3.5000    3.7500    4.0000
+
+>> A = [1 2; 3 4];A(:,2)
+
+ans =
+
+     2
+     4
+
+>> %%2.
+>> 
+>> %(1) clear means to clear all the varibles\in the workspace,but this time I do not wanna clear it
+>> 
+>> a = 1,b = num2str(a) , c = a> 0, a == b, a== c,b == c
+
+a =
+
+     1
+
+
+b =
+
+    '1'
+
+
+c =
+
+  logical
+
+   1
+
+
+ans =
+
+  logical
+
+   0
+
+
+ans =
+
+  logical
+
+   1
+
+
+ans =
+
+  logical
+
+   0
+
+>> %(2)
+>> fun = 'abs(x)' , x = -2,eval(fun),double(fun)
+
+fun =
+
+    'abs(x)'
+
+
+x =
+
+    -2
+
+
+ans =
+
+     2
+
+
+ans =
+
+    97    98   115    40   120    41
+
+>> help eval
+ eval Execute MATLAB expression in text.
+    eval(EXPRESSION) evaluates the MATLAB code in EXPRESSION. Specify
+    EXPRESSION as a character vector or string scalar.
+ 
+    [OUTPUT1,...,OUTPUTN] = eval(EXPRESSION) returns output from EXPRESSION
+    in the specified variables.
+ 
+    Security Considerations: When calling eval with untrusted user input,
+    validate the input to avoid unexpected code execution.
+  
+    Example: Interactively request the name of a matrix to plot.
+ 
+       expression = input('Enter the name of a matrix: ','s');
+       if (exist(expression,'var'))
+          plot(eval(expression))
+       end
+ 
+    See also feval, evalin, assignin, evalc.
+
+    Documentation for eval
+    Other uses of eval
+
+>> help double
+ double Convert to double precision.
+    double(X) returns the double precision value for X.
+    If X is already a double precision array, double has
+    no effect.
+ 
+    double is called for the expressions in FOR, IF, and WHILE loops
+    if the expression isn't already double precision.  double should
+    be overloaded for all objects where it makes sense to convert it
+    into a double precision value.
+ 
+    See also single, DataTypes, isfloat, isnumeric.
+
+    Documentation for double
+    Other uses of double
+
+>> %%3.
+>> 
+>> r = 2;
+>> p = 0.5;
+>> n = 12;
+>> 
+>> T = log(r)/(n*log(1+0.01*p))
+
+T =
+
+   11.5813
+
+>> %%4.
+
+----------------------------------SCRIPT---------------------------------------
+min_x = 10000;
+x_1 = 0;
+x_2 = 0;
+fun = @(x)(x*1.00000)^4 - exp(x);
+flag = 0;
+for x = -2:0.05:2
+    if fun(x) < min_x
+        min_x = fun(x);
+    end;
+    if fun(x) * fun(x + 0.05) < 0
+        if flag == 0
+            flag = 1;
+            if abs(fun(x)) < abs(fun(x + 0.05))
+                x1 = x;
+            else
+                x1 = x + 0.05;
+            end;
+        else
+            if abs(fun(x)) < abs(fun(x + 0.05))
+                x2 = x;
+            else
+                x2 = x + 0.05;
+            end;
+        end;
+    end;
+end;
+disp(min_x);
+disp(x1);
+disp(x2);
+
+----------------------------------OUTPUT-------------------------------------
+   -1.8176
+
+   -0.8000
+
+    1.4500
+--------------------------------------------------------------------------------
+
+>> %%5.
+>> z = magic(10)
+
+z =
+
+    92    99     1     8    15    67    74    51    58    40
+    98    80     7    14    16    73    55    57    64    41
+     4    81    88    20    22    54    56    63    70    47
+    85    87    19    21     3    60    62    69    71    28
+    86    93    25     2     9    61    68    75    52    34
+    17    24    76    83    90    42    49    26    33    65
+    23     5    82    89    91    48    30    32    39    66
+    79     6    13    95    97    29    31    38    45    72
+    10    12    94    96    78    35    37    44    46    53
+    11    18   100    77    84    36    43    50    27    59
+
+>> s = sum(z)
+
+s =
+
+   505   505   505   505   505   505   505   505   505   505
+
+>> s_diag = sum(diag(z))
+
+s_diag =
+
+   505
+
+>> z(:,2) /= sqrt(2)
+ z(:,2) /= sqrt(2)
+         ↑
+Incorrect use of '=' operator. Assign a value to a variable using '=' and compare values for
+equality using '=='.
+ 
+>> z(:,2)/sqrt(2)
+
+ans =
+
+   70.0036
+   56.5685
+   57.2756
+   61.5183
+   65.7609
+   16.9706
+    3.5355
+    4.2426
+    8.4853
+   12.7279
+
+>> z(:,2) =  z(:,2)/sqrt(2)
+
+z =
+
+  Columns 1 through 9
+
+   92.0000   70.0036    1.0000    8.0000   15.0000   67.0000   74.0000   51.0000   58.0000
+   98.0000   56.5685    7.0000   14.0000   16.0000   73.0000   55.0000   57.0000   64.0000
+    4.0000   57.2756   88.0000   20.0000   22.0000   54.0000   56.0000   63.0000   70.0000
+   85.0000   61.5183   19.0000   21.0000    3.0000   60.0000   62.0000   69.0000   71.0000
+   86.0000   65.7609   25.0000    2.0000    9.0000   61.0000   68.0000   75.0000   52.0000
+   17.0000   16.9706   76.0000   83.0000   90.0000   42.0000   49.0000   26.0000   33.0000
+   23.0000    3.5355   82.0000   89.0000   91.0000   48.0000   30.0000   32.0000   39.0000
+   79.0000    4.2426   13.0000   95.0000   97.0000   29.0000   31.0000   38.0000   45.0000
+   10.0000    8.4853   94.0000   96.0000   78.0000   35.0000   37.0000   44.0000   46.0000
+   11.0000   12.7279  100.0000   77.0000   84.0000   36.0000   43.0000   50.0000   27.0000
+
+  Column 10
+
+   40.0000
+   41.0000
+   47.0000
+   28.0000
+   34.0000
+   65.0000
+   66.0000
+   72.0000
+   53.0000
+   59.0000
+
+>> z(8,:) = z(8,:)+z(3,:)
+
+z =
+
+  Columns 1 through 9
+
+   92.0000   70.0036    1.0000    8.0000   15.0000   67.0000   74.0000   51.0000   58.0000
+   98.0000   56.5685    7.0000   14.0000   16.0000   73.0000   55.0000   57.0000   64.0000
+    4.0000   57.2756   88.0000   20.0000   22.0000   54.0000   56.0000   63.0000   70.0000
+   85.0000   61.5183   19.0000   21.0000    3.0000   60.0000   62.0000   69.0000   71.0000
+   86.0000   65.7609   25.0000    2.0000    9.0000   61.0000   68.0000   75.0000   52.0000
+   17.0000   16.9706   76.0000   83.0000   90.0000   42.0000   49.0000   26.0000   33.0000
+   23.0000    3.5355   82.0000   89.0000   91.0000   48.0000   30.0000   32.0000   39.0000
+   83.0000   61.5183  101.0000  115.0000  119.0000   83.0000   87.0000  101.0000  115.0000
+   10.0000    8.4853   94.0000   96.0000   78.0000   35.0000   37.0000   44.0000   46.0000
+   11.0000   12.7279  100.0000   77.0000   84.0000   36.0000   43.0000   50.0000   27.0000
+
+  Column 10
+
+   40.0000
+   41.0000
+   47.0000
+   28.0000
+   34.0000
+   65.0000
+   66.0000
+  119.0000
+   53.0000
+   59.0000
+
+>> 
+
+---------------------------------------------------------------------------------------------p20页习题 终端输出结果
+
+-----------------------注：本次作业采用终端输出的原因主要在于此种提交的方式更能体现本人的实际操作及学习过程
+
+------------------------------------------------------------------------------------------May 1st B23042424 袁浩宽
+
+%%1.
+>> a = [1 2 3];
+>> b = [2 4 3];
+>> a./b
+
+ans =
+
+    0.5000    0.5000    1.0000
+
+>> a.\b
+
+ans =
+
+     2     2     1
+
+>> a/b
+
+ans =
+
+    0.6552
+
+>> a\b
+
+ans =
+
+         0         0         0
+         0         0         0
+    0.6667    1.3333    1.0000
+
+
+%%2.
+
+
+%(1)
+
+>> mat_1 = [4 1 -1 9;3 2 -6 -2;1 -5 3 1]; 
+>> rref(mat_1)
+
+ans =
+
+    1.0000         0         0    2.3830
+         0    1.0000         0    1.4894
+         0         0    1.0000    2.0213
+
+---------------------------------------------------------------------------------------------
+解：x1  = 2.3830
+       x2  = 1.4894
+       x3  = 2.0213
+---------------------------------------------------------------------------------------------
+
+%(2)
+
+>> mat2 = [4 -3 3;3 2 -6; 1 -5 3];
+>> B = [-1;-2;1];
+>> null(mat2)
+
+ans =
+
+  3×0 empty double matrix
+
+>> rref([mat2 B])
+
+ans =
+
+    1.0000         0         0   -0.4706
+         0    1.0000         0   -0.2941
+         0         0    1.0000         0
+
+---------------------------------------------------------------------------------------------
+解：x1  = -0.4706
+       x2  = -0.2941
+       x3  = 0
+---------------------------------------------------------------------------------------------
+
+ %(3)
+
+>> mat3 = [4 1;3 2;1 -5];
+>> rref(mat3)
+
+ans =
+
+     1     0
+     0     1
+     0     0
+
+>> B2 = [1;1;1];
+>> rref([mat3 B2])
+
+ans =
+
+     1     0     0
+     0     1     0
+     0     0     1
+
+---------------------------------------------------------------------------------------------
+解：无确切解，
+       由最小二乘法可得近似解。
+---------------------------------------------------------------------------------------------
+
+%（4）
+>> mat4 = [2 1 -1 1;1 2 1 -1;1 1 2 1];
+>> B3 = [1;2;3];
+>> rref([mat4 B3])
+
+ans =
+
+    1.0000         0         0    1.5000    1.0000
+         0    1.0000         0   -1.5000         0
+         0         0    1.0000    0.5000    1.0000
+
+---------------------------------------------------------------------------------------------
+解：有无穷的解
+---------------------------------------------------------------------------------------------
+
+%%3
+
+[-1.5;1.5;-0.5]k + [1;0;1]
+
+%%6
+
+>> mat1 = [4 1 -1;3 2 -6;1 -5 3];
+>> mat2 = [1 1 -1;0 2 -1;-1 2 0];
+>> mat3 = [5 7 6 5 ;7 10 8 7;6 8 10 9;5 7 9 10];
+>> det(mat1)
+
+ans =
+
+   -94
+
+>> det(mat2)
+
+ans =
+
+     1
+
+>> det(mat3)
+
+ans =
+
+    1.0000
+
+>> inv(mat1)
+
+ans =
+
+    0.2553   -0.0213    0.0426
+    0.1596   -0.1383   -0.2234
+    0.1809   -0.2234   -0.0532
+
+>> inv(mat2)
+
+ans =
+
+    2.0000   -2.0000    1.0000
+    1.0000   -1.0000    1.0000
+    2.0000   -3.0000    2.0000
+
+>> inv(mat3)
+
+ans =
+
+   68.0000  -41.0000  -17.0000   10.0000
+  -41.0000   25.0000   10.0000   -6.0000
+  -17.0000   10.0000    5.0000   -3.0000
+   10.0000   -6.0000   -3.0000    2.0000
+
+>> [V,D] = eig(mat1)
+
+V =
+
+    0.0185   -0.9009   -0.3066
+   -0.7693   -0.1240   -0.7248
+   -0.6386   -0.4158    0.6170
+
+
+D =
+
+   -3.0527         0         0
+         0    3.6760         0
+         0         0    8.3766
+
+>> [V,D] = eig(mat2)
+
+V =
+
+   0.5774 + 0.0000i   0.5773 + 0.0000i   0.5773 - 0.0000i
+   0.5774 + 0.0000i   0.5773 + 0.0000i   0.5773 - 0.0000i
+   0.5773 + 0.0000i   0.5774 + 0.0000i   0.5774 + 0.0000i
+
+
+D =
+
+   1.0000 + 0.0000i   0.0000 + 0.0000i   0.0000 + 0.0000i
+   0.0000 + 0.0000i   1.0000 + 0.0000i   0.0000 + 0.0000i
+   0.0000 + 0.0000i   0.0000 + 0.0000i   1.0000 - 0.0000i
+
+>> [V,D] = eig(mat3)
+
+V =
+
+    0.8304    0.0933    0.3963    0.3803
+   -0.5016   -0.3017    0.6149    0.5286
+   -0.2086    0.7603   -0.2716    0.5520
+    0.1237   -0.5676   -0.6254    0.5209
+
+
+D =
+
+    0.0102         0         0         0
+         0    0.8431         0         0
+         0         0    3.8581         0
+         0         0         0   30.2887
+
+%%8
+
+---------------------------------------------------------------------------------------------
+解：%%6中的mat1 mat2不是正定矩阵，而mat3是正定矩阵
+---------------------------------------------------------------------------------------------
+
+%%9
+
+>> a1 = [4 -3 1 3];
+>> a2 = [2 -1 3 5];
+>> a3 = [1 -1 -1 -1];
+>> a4 = [3 -2 3 4];
+>> a5 = [7 -6 -7 0];
+>> matt = [a1' a2' a3' a4' a5']
+
+matt =
+
+     4     2     1     3     7
+    -3    -1    -1    -2    -6
+     1     3    -1     3    -7
+     3     5    -1     4     0
+
+>> rref(matt)
+
+ans =
+
+    1.0000     0         0.5000   0           5.0000
+         0    1.0000   -0.5000    0          1.0000
+         0         0         0            1.0000 -5.0000
+         0         0         0            0           0
+
+---------------------------------------------------------------------------------------------
+解：a1 a2 a4为极大无关组。
+       a3 = 0.5a1 -0.5a2
+       a4 = 5a1 +1a2 -5a5
+---------------------------------------------------------------------------------------------
+>> mat = [1 -4 4;-4 -2 8;4 8 -2];
+>> det(mat([1],[1]))
+
+ans =
+
+     1
+
+>> det(mat([1,2],[1,2]))
+
+ans =
+
+   -18
+
+>> det(mat(:,:))
+
+ans =
+
+  -252
+
+>> delt1 = 1
+
+delt1 =
+
+     1
+
+>> delt2 = -18/1
+
+delt2 =
+
+   -18
+
+>> delt3 = -252/-18
+
+delt3 =
+
+    14
+
+%%10
+
+>> mat = [1 -2 2;-2 -2 4;2 4 -2];
+>> [Q,D]=eig(mat)
+
+Q =
+
+    0.3333    0.8944   -0.2981
+    0.6667   -0.4472   -0.5963
+   -0.6667         0   -0.7454
+
+
+D =
+
+   -7.0000         0         0
+         0    2.0000         0
+         0         0    2.0000
+
+---------------------------------------------------------------------------------------------
+解：D对角分别对应二次平方项系数
+---------------------------------------------------------------------------------------------
